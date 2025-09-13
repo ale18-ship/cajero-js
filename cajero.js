@@ -26,11 +26,11 @@ function manejarOpcion(opcion) {
       mostrarMenu();
       break;
     case "2":
-      console.log(".");
+      console.log("Función de depósito en construcción");
       mostrarMenu();
       break;
     case "3":
-      console.log(".");
+      console.log("Función de retiro en construcción");
       mostrarMenu();
       break;
     case "4":
