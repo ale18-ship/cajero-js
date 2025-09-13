@@ -5,13 +5,43 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-console.log("💵 Bienvenido al cajero automático");
-console.log("1. Consultar saldo");
-console.log("2. Depositar dinero");
-console.log("3. Retirar dinero");
-console.log("4. Salir");
+let saldo = 1000;
 
-rl.question("👉 Selecciona una opción: ", (opcion) => {
-  console.log(`Elegiste la opción: ${opcion}`);
-  rl.close();
-});
+function mostrarMenu() {
+  console.log("\n💵 Bienvenido al cajero automático");
+  console.log("1. Consultar saldo");
+  console.log("2. Depositar dinero");
+  console.log("3. Retirar dinero");
+  console.log("4. Salir");
+
+  rl.question("Selecciona una opción: ", (opcion) => {
+    manejarOpcion(opcion);
+  });
+}
+
+function manejarOpcion(opcion) {
+  switch (opcion) {
+    case "1":
+      console.log(`📊 Tu saldo actual es: $${saldo}`);
+      mostrarMenu();
+      break;
+    case "2":
+      console.log(".");
+      mostrarMenu();
+      break;
+    case "3":
+      console.log(".");
+      mostrarMenu();
+      break;
+    case "4":
+      console.log("👋 Gracias por usar el cajero. ¡Hasta luego!");
+      rl.close();
+      break;
+    default:
+      console.log("❌ Opción no válida, intenta de nuevo.");
+      mostrarMenu();
+      break;
+  }
+}
+
+mostrarMenu();
